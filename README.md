@@ -5,6 +5,10 @@
 cd ~/catkin_ws/src
 git clone https://github.com/Elur12/odom_tf2.git
 ```
+В файл (clover.launch)[https://github.com/CopterExpress/clover/blob/master/clover/launch/clover.launch] добавьте строки
+```bash
+<node name="odom_tf2_broadcaster" pkg="odom_tf2" type="odom_tf2_broadcaster.py" respawn="false" output="screen"/>
+```
 ## Сборка
 ```bash
 cd ~/catkin_ws
