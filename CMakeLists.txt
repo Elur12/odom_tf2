@@ -8,8 +8,6 @@ project(odom_tf2)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  clover
-  realsense_ros_gazebo
   roscpp
   rospy
   tf2

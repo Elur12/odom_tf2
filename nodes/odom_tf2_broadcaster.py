@@ -1,9 +1,7 @@
-#!/usr/bin/env python  
+#!/usr/bin/env python3
 import rospy
 
-import tf_conversions
 
-import tf2_web_republisher
 import tf2_ros
 
 from nav_msgs.msg import Odometry
@@ -37,13 +35,11 @@ def handle_odom_pose(msg):
     t.transform.rotation.y = 0
     t.transform.rotation.z = 0
     t.transform.rotation.w = 1
-
     br.sendTransform(t)
 
 if __name__ == '__main__':
     rospy.init_node('tf2_odom_broadcaster')
 
     rospy.Subscriber('/mavros/local_position/pose', geometry_msgs.msg.PoseStamped, handle_body_pose)
-
     rospy.Subscriber('/camera/odom/sample', Odometry, handle_odom_pose)
     rospy.spin()
